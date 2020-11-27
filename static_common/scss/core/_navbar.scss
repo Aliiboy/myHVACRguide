@@ -1,0 +1,40 @@
+// Navbar ======================================================================
+
+/* Primary
+-------------------------------------------------- */ 
+.navbar-primary {
+  height: $navbar-primary-height-y;
+
+    .navbar-brand {
+      font-weight: 500;
+      @include font-size($font-size-lg);
+      letter-spacing: 0.06rem;
+    }
+}
+
+
+/* Account
+-------------------------------------------------- */ 
+.navbar-account {
+  min-height: $navbar-primary-height-y;
+    .navbar-brand {
+      font-weight: 500;
+      @include font-size($font-size-lg);
+      letter-spacing: 0.06rem;
+      
+    }
+
+  .navbar-nav {
+    .dropdown-menu {
+      position: absolute;
+    }
+
+    .dropdown-toggle {
+      font-weight: 400;
+
+      .dropdown-menu {
+        @include font-size($font-size-sm);
+      }
+    }
+  }
+}

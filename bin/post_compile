@@ -1,0 +1,3 @@
+python src/manage.py collectstatic --noinput
+python src/manage.py compress --force
+python src/manage.py collectstatic --noinput

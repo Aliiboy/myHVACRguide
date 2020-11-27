@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load compress %}
+
+
+{# CSS et SCSS #}
+{# ---------------------------------------------- #}
+{% block app_styles %}
+    {% compress css %}
+        <link type="text/x-scss" href="{% static "scss/core.scss" %}" rel="stylesheet" media="screen">
+    {% endcompress %}
+{% endblock app_styles %}
+
+
+{# Block de la mise en page #}
+{# ---------------------------------------------- #}
+{% block app_layout %}
+
+    {# Header #}
+    <header>
+        {% include "becenter/snippets/header.html" %}
+        <div class="container-fluid message-container px-0">
+            {% include 'becenter/snippets/messages.html' %}
+        </div>
+    </header>
+
+    {# Block de la page #}
+    {% block content %} {% endblock content %}
+
+    {# Footer #}
+    {% include "core/snippets/footer_primary.html" %}
+
+{% endblock app_layout %}
+
+
+{# Block des scripts JS application. #}
+{# ---------------------------------------------- #}
+{% block app_scripts %}
+    <script src="{% static "js/core/messages.js" %}"></script>
+    <script src="{% static "js/core/sidebar.js" %}"></script>
+{% endblock app_scripts %}

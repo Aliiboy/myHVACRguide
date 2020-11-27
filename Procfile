@@ -1,0 +1,1 @@
+web: gunicorn --pythonpath src myhvacrguide.wsgi --log-file -

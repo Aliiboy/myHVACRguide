@@ -1,0 +1,2 @@
+{% load i18n %}
+{% blocktrans %}Adresse e-mail principale définie.{% endblocktrans %}

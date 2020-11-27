@@ -1,0 +1,25 @@
+# > Package Python
+# Separation paremetres/code (.env dans le root)
+python-decouple==3.3
+
+
+# > Django
+Django==2.2.11
+
+
+# > Package Django
+# Authentification
+django-allauth==0.41.0
+django-recaptcha==2.0.6
+# SCSS 
+django-compressor==2.4
+django-libsass==0.8
+# Rendu des formulaires
+django-crispy-forms==1.9.0
+
+
+# > Heroku
+gunicorn==20.0.4
+dj-database-url==0.5.0
+psycopg2==2.8.5
+whitenoise==5.0.1

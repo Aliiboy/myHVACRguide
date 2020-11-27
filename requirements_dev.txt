@@ -1,0 +1,8 @@
+# > Development
+# Visual Studio Code
+pycodestyle==2.5.0
+pydocstyle==5.0.2
+pylint-django==2.0.14
+
+# Barre de debug
+django-debug-toolbar==2.2

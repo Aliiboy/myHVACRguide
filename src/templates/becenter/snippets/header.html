@@ -1,0 +1,61 @@
+{% load account %}
+{% load i18n %}
+
+
+{% url 'core:index' as core_index %}
+{% url 'core:becenter' as core_becenter %}
+{% url 'customer:account_profile' as account_profile %}
+
+{% url 'account_login' as account_login %}
+{% url 'account_logout' as account_logout %}
+{% url 'account_change_password' as account_change_password %}
+
+{% user_display user as user_display %}
+
+
+{# navbar-account #}
+{# ---------------------------------------------- #}
+<nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-primary navbar-account">
+  <div class="container-fluid px-0">
+    {# Icon sidebar #}
+    <button class="navbar-toggler" type="button" id="sidebarCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    {# Titre site et/ou logo #}
+    <a class="navbar-brand mx-3" href="{{ core_index }}">
+      <span class="brand-techni text-uppercase">Techni</span>
+      &nbsp <span class="brand-BE text-uppercase">BE</span>
+    </a>
+
+    {# Icon navbar & collapse #}
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      {# Nav left #}
+      <ul class="navbar-nav mr-auto">
+        <li class="{% if 'becenter' in request.path %}nav-item active {% else %}nav-item {% endif %}">
+          <a class="nav-link" href="{{ core_becenter }}">{% trans "Applications" %}</a>
+        </li>
+      </ul> <!-- navbar-nav mr-auto -->
+
+      {# Nav right #}
+      <ul class="navbar-nav ml-auto">
+        <li class="{% if 'accounts' in request.path %}nav-item active my-1{% else %}nav-item my-1{% endif %}">
+          <a class="nav-link m-auto" href="{{ account_profile }}">
+            <i class="fas fa-user"></i>{{ user_display }}</a>
+        </li>
+
+        {# Power icon #}
+        <li class="{% if 'logout' in request.path %}nav-item active my-1{% else %}nav-item my-1{% endif %}">
+          <a class="nav-link" href="{{ account_logout }}">
+            <i class="fas fa-power-off text-danger m-0"></i>
+          </a>
+        </li>
+      </ul> <!-- navbar-nav ml-auto -->
+    </div> <!-- collapse -->
+  </div> <!-- container -->
+</nav>
