@@ -6,3 +6,6 @@ pylint-django==2.0.14
 
 # Barre de debug
 django-debug-toolbar==2.2
+
+# Programme de test
+coverage==5.3
