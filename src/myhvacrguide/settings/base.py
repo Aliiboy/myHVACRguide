@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import sys
 from decouple import config
 from django.contrib.messages import constants as messages
 
@@ -18,7 +19,10 @@ from django.contrib.messages import constants as messages
 ###############################################################################
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
+# > Permet de centraliser les applications dans un dossier
+PROJECT_ROOT = os.path.dirname(os.path.dirname(
+    os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, os.path.join(PROJECT_ROOT, 'apps'))
 
 ###############################################################################
 # Quick-start development settings - unsuitable for production
@@ -53,8 +57,8 @@ INSTALLED_APPS = [
     # Rendu des formulaires
     'crispy_forms',
     # > App
-    'core.apps.CoreConfig',
-    'customer.apps.CustomerConfig',
+    'apps.core.apps.CoreConfig',
+    'apps.customer.apps.CustomerConfig',
 ]
 
 MIDDLEWARE = [
