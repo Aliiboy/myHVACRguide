@@ -1,59 +1,59 @@
-// Reboot ======================================================================
+// // Reboot ======================================================================
 
-/* HTML
--------------------------------------------------- */
-html {
-    @include font-size($font-size-sm);
-}
-
-
-/* Messages
--------------------------------------------------- */
-.message-container {
-    margin-top: $main-margin-top;
-}
+// /* HTML
+// -------------------------------------------------- */
+// html {
+//     @include font-size($font-size-sm);
+// }
 
 
-/* Icones
--------------------------------------------------- */
-i.fas {
-    font-size : 1.15rem ;
-    margin-right: 0.5rem;
-}
+// /* Messages
+// -------------------------------------------------- */
+// .message-container {
+//     margin-top: $main-margin-top;
+// }
 
 
-/* Alert
--------------------------------------------------- */
-.alert {
-    ul {
-        list-style: none;
-        padding: 0;
-    }
-}
+// /* Icones
+// -------------------------------------------------- */
+// i.fas {
+//     font-size : 1.15rem ;
+//     margin-right: 0.5rem;
+// }
 
 
-/* Footer
--------------------------------------------------- */
-.footer-primary {
-    height: $footer-primary-height-y;
-    z-index: 100;
-    // border: 1px solid rgba(0, 0, 0, 0.6);
-    // background-color: #0C3C60 !important;
-    // a {
-    //     @include hover-focus() {
-    //         color: $navbar-dark-hover-color !important;
-    //         text-decoration: none;
-    //     }
-    // }
-}
+// /* Alert
+// -------------------------------------------------- */
+// .alert {
+//     ul {
+//         list-style: none;
+//         padding: 0;
+//     }
+// }
 
-.footer-light {
-    border: 1px solid #345578;
-}
 
-.footer-app {
-    i {
-        // font-size: 1.5rem;
-        font-size: $font-size-lg;
-    }
-}
+// /* Footer
+// -------------------------------------------------- */
+// .footer-primary {
+//     height: $footer-primary-height-y;
+//     z-index: 100;
+//     // border: 1px solid rgba(0, 0, 0, 0.6);
+//     // background-color: #0C3C60 !important;
+//     // a {
+//     //     @include hover-focus() {
+//     //         color: $navbar-dark-hover-color !important;
+//     //         text-decoration: none;
+//     //     }
+//     // }
+// }
+
+// .footer-light {
+//     border: 1px solid #345578;
+// }
+
+// .footer-app {
+//     i {
+//         // font-size: 1.5rem;
+//         font-size: $font-size-lg;
+//     }
+// }

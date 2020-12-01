@@ -1,205 +1,205 @@
-// Sidebar======================================================================
+// // Sidebar======================================================================
 
 
-/* Primary
--------------------------------------------------- */
-.sidebar-nav {
-    display: flex;
-    flex-direction: column; // cannot use `inherit` to get the `.navbar`s value
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
+// /* Primary
+// -------------------------------------------------- */
+// .sidebar-nav {
+//     display: flex;
+//     flex-direction: column; // cannot use `inherit` to get the `.navbar`s value
+//     padding-left: 0;
+//     margin-bottom: 0;
+//     list-style: none;
   
-    .nav-link {
-      padding-right: 0;
-      padding-left: 0;
-    }
+//     .nav-link {
+//       padding-right: 0;
+//       padding-left: 0;
+//     }
   
-    .dropdown-menu {
-      position: static;
-      float: none;
-    }
-  }
+//     .dropdown-menu {
+//       position: static;
+//       float: none;
+//     }
+//   }
 
 
-.sidebar {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 100; /* Behind the navbar */
-    margin: $main-margin-top 0 0; /* Height of navbar */
-    padding: 0 0 $footer-primary-height-y;
-    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-    transition: all 0.3s;
+// .sidebar {
+//     position: fixed;
+//     top: 0;
+//     bottom: 0;
+//     left: 0;
+//     z-index: 100; /* Behind the navbar */
+//     margin: $main-margin-top 0 0; /* Height of navbar */
+//     padding: 0 0 $footer-primary-height-y;
+//     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+//     transition: all 0.3s;
 
-    .container {
-      padding: 0;
-    }
+//     .container {
+//       padding: 0;
+//     }
   
-    .nav-link {
-      padding: 1rem;
-    }
+//     .nav-link {
+//       padding: 1rem;
+//     }
     
-    &-nav .nav-item + .nav-item {
-      margin-left: 0;
-    }
-  }
+//     &-nav .nav-item + .nav-item {
+//       margin-left: 0;
+//     }
+//   }
 
 
-.sidebar-sticky {
-    position: relative;
-    top: 0;
-    height: calc(100vh - 48px);
-    overflow-x: hidden;
-    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-}
+// .sidebar-sticky {
+//     position: relative;
+//     top: 0;
+//     height: calc(100vh - 48px);
+//     overflow-x: hidden;
+//     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+// }
 
-@supports ((position: -webkit-sticky) or (position: sticky)) {
-.sidebar-sticky {
-    position: -webkit-sticky;
-    position: sticky;
-}
-}
-
-
-// .sidebar-heading {
-//     font-size: .75rem;
-//     text-transform: uppercase;
+// @supports ((position: -webkit-sticky) or (position: sticky)) {
+// .sidebar-sticky {
+//     position: -webkit-sticky;
+//     position: sticky;
+// }
 // }
 
 
-/* Responsive
--------------------------------------------------- */ 
-@media (min-width: 768px) {
-  .sidebar {
-    margin-left: 0;
-  }
-
-  .app-wrapper.toggled .sidebar {
-    margin-left: 0;
-  }
-
-  #sidebarCollapse {
-      display: none;
-  }
-
-}
-
-@media (max-width: 768px) {
-  .sidebar {
-      margin-left: -55rem;
-    }
-
-    .app-wrapper.toggled .sidebar {
-      margin-left: 0;
-    }
-
-  #sidebarCollapse {
-      display: inline-block;
-  }
-
-}
+// // .sidebar-heading {
+// //     font-size: .75rem;
+// //     text-transform: uppercase;
+// // }
 
 
-/* Themes
--------------------------------------------------- */
-.sidebar-light {
-  .sidebar-brand {
-    color: $navbar-light-brand-color;
-    @include hover-focus() {
-      color: $navbar-light-brand-hover-color;
-    }
-  }
+// /* Responsive
+// -------------------------------------------------- */ 
+// @media (min-width: 768px) {
+//   .sidebar {
+//     margin-left: 0;
+//   }
 
-  .sidebar-nav {
-    .nav-link {
-      color: $navbar-light-color;
+//   .app-wrapper.toggled .sidebar {
+//     margin-left: 0;
+//   }
 
-      @include hover-focus() {
-        color: $navbar-light-hover-color;
-      }
+//   #sidebarCollapse {
+//       display: none;
+//   }
 
-      &.disabled {
-        color: $navbar-light-disabled-color;
-      }
-    }
+// }
 
-    .show > .nav-link,
-    .active > .nav-link,
-    .nav-link.show,
-    .nav-link.active {
-      color: $navbar-light-active-color;
-    }
-  }
+// @media (max-width: 768px) {
+//   .sidebar {
+//       margin-left: -55rem;
+//     }
 
-  .sidebar-toggler {
-    color: $navbar-light-color;
-    border-color: $navbar-light-toggler-border-color;
-  }
+//     .app-wrapper.toggled .sidebar {
+//       margin-left: 0;
+//     }
 
-  .sidebar-toggler-icon {
-    background-image: escape-svg($navbar-light-toggler-icon-bg);
-  }
+//   #sidebarCollapse {
+//       display: inline-block;
+//   }
 
-  .sidebar-text {
-    color: $navbar-light-color;
-    a {
-      color: $navbar-light-active-color;
+// }
 
-      @include hover-focus() {
-        color: $navbar-light-active-color;
-      }
-    }
-  }
-}
 
-.sidebar-dark {
-  .sidebar-brand {
-    color: $navbar-dark-brand-color;
-    @include hover-focus() {
-      color: $navbar-dark-brand-hover-color;
-    }
-  }
+// /* Themes
+// -------------------------------------------------- */
+// .sidebar-light {
+//   .sidebar-brand {
+//     color: $navbar-light-brand-color;
+//     @include hover-focus() {
+//       color: $navbar-light-brand-hover-color;
+//     }
+//   }
 
-  .sidebar-nav {
-    .nav-link {
-      color: $navbar-dark-color;
+//   .sidebar-nav {
+//     .nav-link {
+//       color: $navbar-light-color;
 
-      @include hover-focus() {
-        color: $navbar-dark-hover-color;
-      }
+//       @include hover-focus() {
+//         color: $navbar-light-hover-color;
+//       }
 
-      &.disabled {
-        color: $navbar-dark-disabled-color;
-      }
-    }
+//       &.disabled {
+//         color: $navbar-light-disabled-color;
+//       }
+//     }
 
-    .show > .nav-link,
-    .active > .nav-link,
-    .nav-link.show,
-    .nav-link.active {
-      color: $navbar-dark-active-color;
-    }
-  }
+//     .show > .nav-link,
+//     .active > .nav-link,
+//     .nav-link.show,
+//     .nav-link.active {
+//       color: $navbar-light-active-color;
+//     }
+//   }
 
-  .sidebar-toggler {
-    color: $navbar-dark-color;
-    border-color: $navbar-dark-toggler-border-color;
-  }
+//   .sidebar-toggler {
+//     color: $navbar-light-color;
+//     border-color: $navbar-light-toggler-border-color;
+//   }
 
-  .sidebar-toggler-icon {
-    background-image: escape-svg($navbar-dark-toggler-icon-bg);
-  }
+//   .sidebar-toggler-icon {
+//     background-image: escape-svg($navbar-light-toggler-icon-bg);
+//   }
 
-  .sidebar-text {
-    color: $navbar-dark-color;
-    a {
-      color: $navbar-dark-active-color;
+//   .sidebar-text {
+//     color: $navbar-light-color;
+//     a {
+//       color: $navbar-light-active-color;
 
-      @include hover-focus() {
-        color: $navbar-dark-active-color;
-      }
-    }
-  }
-}
+//       @include hover-focus() {
+//         color: $navbar-light-active-color;
+//       }
+//     }
+//   }
+// }
+
+// .sidebar-dark {
+//   .sidebar-brand {
+//     color: $navbar-dark-brand-color;
+//     @include hover-focus() {
+//       color: $navbar-dark-brand-hover-color;
+//     }
+//   }
+
+//   .sidebar-nav {
+//     .nav-link {
+//       color: $navbar-dark-color;
+
+//       @include hover-focus() {
+//         color: $navbar-dark-hover-color;
+//       }
+
+//       &.disabled {
+//         color: $navbar-dark-disabled-color;
+//       }
+//     }
+
+//     .show > .nav-link,
+//     .active > .nav-link,
+//     .nav-link.show,
+//     .nav-link.active {
+//       color: $navbar-dark-active-color;
+//     }
+//   }
+
+//   .sidebar-toggler {
+//     color: $navbar-dark-color;
+//     border-color: $navbar-dark-toggler-border-color;
+//   }
+
+//   .sidebar-toggler-icon {
+//     background-image: escape-svg($navbar-dark-toggler-icon-bg);
+//   }
+
+//   .sidebar-text {
+//     color: $navbar-dark-color;
+//     a {
+//       color: $navbar-dark-active-color;
+
+//       @include hover-focus() {
+//         color: $navbar-dark-active-color;
+//       }
+//     }
+//   }
+// }
