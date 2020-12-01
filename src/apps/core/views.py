@@ -13,33 +13,33 @@ from django.views import generic
 from myhvacrguide.settings import base as settings
 
 
-class IndexView(generic.TemplateView):
+# class IndexView(generic.TemplateView):
+#     """
+#     Index.
+
+#     Page publique de presentation du site
+#     """
+
+#     template_name = "core/index.html"
+
+#     def get(self, request, *args, **kwargs):
+#         """
+#         Redirection vers le BE CENTER.
+
+#         Si login encore actif, renvois au BE CENTER
+#         en lieu et place de l'index.
+#         """
+#         if request.user.is_authenticated:
+#             return redirect(settings.LOGIN_REDIRECT_URL)
+#         return super().get(
+#             request, *args, **kwargs)
+
+
+class IndexUiView(LoginRequiredMixin, generic.TemplateView):
     """
-    Index.
-
-    Page publique de presentation du site
-    """
-
-    template_name = "core/index.html"
-
-    def get(self, request, *args, **kwargs):
-        """
-        Redirection vers le BE CENTER.
-
-        Si login encore actif, renvois au BE CENTER
-        en lieu et place de l'index.
-        """
-        if request.user.is_authenticated:
-            return redirect(settings.LOGIN_REDIRECT_URL)
-        return super().get(
-            request, *args, **kwargs)
-
-
-class BecenterView(LoginRequiredMixin, generic.TemplateView):
-    """
-    BE Center.
+    IndexUiView.
 
     Dashboard utilisateur
     """
 
-    template_name = "becenter/becenter.html"
+    template_name = "pages/core/index.html"
