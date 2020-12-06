@@ -1,325 +1,211 @@
-// body {
-//   font-size: .875rem;
-// }
+// Sidebar======================================================================
 
-// .bd-placeholder-img {
-//   font-size: 1.125rem;
-//   text-anchor: middle;
-//   -webkit-user-select: none;
-//   -moz-user-select: none;
-//   -ms-user-select: none;
-//   user-select: none;
-// }
+/* Primary
+-------------------------------------------------- */
+.sidebar {
+  position: fixed;
+  // min-width: 160px;
+  // width: 160px;
+  // // max-width: 160px;
+  // top: 0;
+  // bottom: 0;
+  // left: 0;
+  // z-index: 100; /* Behind the navbar */
+  margin: $main-margin-top 0 0; /* Height of navbar */
+  // padding: 0 0 $footer-primary-height-y;
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.3s;
 
-// @media (min-width: 768px) {
-//   .bd-placeholder-img-lg {
-//     font-size: 3.5rem;
-//   }
-// }
+  .container {
+    padding: 0;
+  }
 
-// .feather {
-//   width: 16px;
-//   height: 16px;
-//   vertical-align: text-bottom;
-// }
+  .nav-link {
+    padding: 1rem;
+  }
 
-// /*
-//  * Sidebar
-//  */
+  &-nav .nav-item + .nav-item {
+    margin-left: 0;
+  }
+}
 
-// .sidebar {
-//   position: fixed;
-//   top: 0;
-//   bottom: 0;
-//   left: 0;
-//   z-index: 100; /* Behind the navbar */
-//   padding: 48px 0 0; /* Height of navbar */
-//   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-// }
+.sidebar-sticky {
+  position: relative;
+  // top: 0;
+  // height: calc(100vh - 48px);
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
 
-// @media (max-width: 767.98px) {
-//   .sidebar {
-//     top: 5rem;
-//   }
-// }
+.sidebar-nav {
+  display: flex;
+  flex-direction: column; // cannot use `inherit` to get the `.navbar`s value
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
 
-// .sidebar-sticky {
-//   position: relative;
-//   top: 0;
-//   height: calc(100vh - 48px);
-//   padding-top: .5rem;
-//   overflow-x: hidden;
-//   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-// }
+  .nav-link {
+    padding-right: 0;
+    padding-left: 0;
+  }
 
-// @supports ((position: -webkit-sticky) or (position: sticky)) {
-//   .sidebar-sticky {
-//     position: -webkit-sticky;
-//     position: sticky;
-//   }
-// }
+  .dropdown-menu {
+    position: static;
+    float: none;
+  }
+}
 
-// .sidebar .nav-link {
-//   font-weight: 500;
-//   color: #333;
-// }
+.sidebar-toggler-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  content: "";
+  background: no-repeat center center;
+  background-size: 100% 100%;
+}
 
-// .sidebar .nav-link .feather {
-//   margin-right: 4px;
-//   color: #999;
-// }
-
-// .sidebar .nav-link.active {
-//   color: #007bff;
-// }
-
-// .sidebar .nav-link:hover .feather,
-// .sidebar .nav-link.active .feather {
-//   color: inherit;
-// }
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .sidebar-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}
 
 // .sidebar-heading {
-//   font-size: .75rem;
-//   text-transform: uppercase;
+//     font-size: .75rem;
+//     text-transform: uppercase;
 // }
 
-// /*
-//  * Navbar
-//  */
+/* Responsive
+-------------------------------------------------- */
+// sm: 576px, md: 768px, lg: 992px, xl: 1200px
+// > sm
+@media (min-width: 576px) {
+  .sidebar {
+    margin-left: 0;
+  }
 
-// .navbar-brand {
-//   padding-top: .75rem;
-//   padding-bottom: .75rem;
-//   font-size: 1rem;
-//   background-color: rgba(0, 0, 0, .25);
-//   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
-// }
+  .app-wrapper.toggled .sidebar {
+    margin-left: 0;
+  }
 
-// .navbar .navbar-toggler {
-//   top: .25rem;
-//   right: 1rem;
-// }
+  #sidebarCollapse {
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  .sidebar {
+    margin-left: -55rem;
+  }
 
-// .navbar .form-control {
-//   padding: .75rem 1rem;
-//   border-width: 0;
-//   border-radius: 0;
-// }
+  .app-wrapper.toggled .sidebar {
+    margin-left: 0;
+  }
 
-// .form-control-dark {
-//   color: #fff;
-//   background-color: rgba(255, 255, 255, .1);
-//   border-color: rgba(255, 255, 255, .1);
-// }
+  #sidebarCollapse {
+    display: inline-block;
+  }
+}
 
-// .form-control-dark:focus {
-//   border-color: transparent;
-//   box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
-// }
+/* Themes
+-------------------------------------------------- */
+.sidebar-light {
+  .sidebar-brand {
+    color: $navbar-light-brand-color;
+    @include hover-focus() {
+      color: $navbar-light-brand-hover-color;
+    }
+  }
 
+  .sidebar-nav {
+    .nav-link {
+      color: $navbar-light-color;
 
-// // Sidebar======================================================================
+      @include hover-focus() {
+        color: $navbar-light-hover-color;
+      }
 
+      &.disabled {
+        color: $navbar-light-disabled-color;
+      }
+    }
 
-// /* Primary
-// -------------------------------------------------- */
-// .sidebar-nav {
-//     display: flex;
-//     flex-direction: column; // cannot use `inherit` to get the `.navbar`s value
-//     padding-left: 0;
-//     margin-bottom: 0;
-//     list-style: none;
-  
-//     .nav-link {
-//       padding-right: 0;
-//       padding-left: 0;
-//     }
-  
-//     .dropdown-menu {
-//       position: static;
-//       float: none;
-//     }
-//   }
+    .show > .nav-link,
+    .active > .nav-link,
+    .nav-link.show,
+    .nav-link.active {
+      color: $navbar-light-active-color;
+    }
+  }
 
+  .sidebar-toggler {
+    color: $navbar-light-color;
+    border-color: $navbar-light-toggler-border-color;
+  }
 
-// .sidebar {
-//     position: fixed;
-//     top: 0;
-//     bottom: 0;
-//     left: 0;
-//     z-index: 100; /* Behind the navbar */
-//     margin: $main-margin-top 0 0; /* Height of navbar */
-//     padding: 0 0 $footer-primary-height-y;
-//     box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-//     transition: all 0.3s;
+  .sidebar-toggler-icon {
+    background-image: escape-svg($sidebar-light-toggler-icon-bg);
+  }
 
-//     .container {
-//       padding: 0;
-//     }
-  
-//     .nav-link {
-//       padding: 1rem;
-//     }
-    
-//     &-nav .nav-item + .nav-item {
-//       margin-left: 0;
-//     }
-//   }
+  .sidebar-text {
+    color: $navbar-light-color;
+    a {
+      color: $navbar-light-active-color;
 
+      @include hover-focus() {
+        color: $navbar-light-active-color;
+      }
+    }
+  }
+}
 
-// .sidebar-sticky {
-//     position: relative;
-//     top: 0;
-//     height: calc(100vh - 48px);
-//     overflow-x: hidden;
-//     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-// }
+.sidebar-dark {
+  .sidebar-brand {
+    color: $navbar-dark-brand-color;
+    @include hover-focus() {
+      color: $navbar-dark-brand-hover-color;
+    }
+  }
 
-// @supports ((position: -webkit-sticky) or (position: sticky)) {
-// .sidebar-sticky {
-//     position: -webkit-sticky;
-//     position: sticky;
-// }
-// }
+  .sidebar-nav {
+    .nav-link {
+      color: $navbar-dark-color;
 
+      @include hover-focus() {
+        color: $navbar-dark-hover-color;
+      }
 
-// // .sidebar-heading {
-// //     font-size: .75rem;
-// //     text-transform: uppercase;
-// // }
+      &.disabled {
+        color: $navbar-dark-disabled-color;
+      }
+    }
 
+    .show > .nav-link,
+    .active > .nav-link,
+    .nav-link.show,
+    .nav-link.active {
+      color: $navbar-dark-active-color;
+    }
+  }
 
-// /* Responsive
-// -------------------------------------------------- */ 
-// @media (min-width: 768px) {
-//   .sidebar {
-//     margin-left: 0;
-//   }
+  .sidebar-toggler {
+    color: $navbar-dark-color;
+    border-color: $navbar-dark-toggler-border-color;
+  }
 
-//   .app-wrapper.toggled .sidebar {
-//     margin-left: 0;
-//   }
+  .sidebar-toggler-icon {
+    background-image: escape-svg($sidebar-dark-toggler-icon-bg);
+  }
 
-//   #sidebarCollapse {
-//       display: none;
-//   }
+  .sidebar-text {
+    color: $navbar-dark-color;
+    a {
+      color: $navbar-dark-active-color;
 
-// }
-
-// @media (max-width: 768px) {
-//   .sidebar {
-//       margin-left: -55rem;
-//     }
-
-//     .app-wrapper.toggled .sidebar {
-//       margin-left: 0;
-//     }
-
-//   #sidebarCollapse {
-//       display: inline-block;
-//   }
-
-// }
-
-
-// /* Themes
-// -------------------------------------------------- */
-// .sidebar-light {
-//   .sidebar-brand {
-//     color: $navbar-light-brand-color;
-//     @include hover-focus() {
-//       color: $navbar-light-brand-hover-color;
-//     }
-//   }
-
-//   .sidebar-nav {
-//     .nav-link {
-//       color: $navbar-light-color;
-
-//       @include hover-focus() {
-//         color: $navbar-light-hover-color;
-//       }
-
-//       &.disabled {
-//         color: $navbar-light-disabled-color;
-//       }
-//     }
-
-//     .show > .nav-link,
-//     .active > .nav-link,
-//     .nav-link.show,
-//     .nav-link.active {
-//       color: $navbar-light-active-color;
-//     }
-//   }
-
-//   .sidebar-toggler {
-//     color: $navbar-light-color;
-//     border-color: $navbar-light-toggler-border-color;
-//   }
-
-//   .sidebar-toggler-icon {
-//     background-image: escape-svg($navbar-light-toggler-icon-bg);
-//   }
-
-//   .sidebar-text {
-//     color: $navbar-light-color;
-//     a {
-//       color: $navbar-light-active-color;
-
-//       @include hover-focus() {
-//         color: $navbar-light-active-color;
-//       }
-//     }
-//   }
-// }
-
-// .sidebar-dark {
-//   .sidebar-brand {
-//     color: $navbar-dark-brand-color;
-//     @include hover-focus() {
-//       color: $navbar-dark-brand-hover-color;
-//     }
-//   }
-
-//   .sidebar-nav {
-//     .nav-link {
-//       color: $navbar-dark-color;
-
-//       @include hover-focus() {
-//         color: $navbar-dark-hover-color;
-//       }
-
-//       &.disabled {
-//         color: $navbar-dark-disabled-color;
-//       }
-//     }
-
-//     .show > .nav-link,
-//     .active > .nav-link,
-//     .nav-link.show,
-//     .nav-link.active {
-//       color: $navbar-dark-active-color;
-//     }
-//   }
-
-//   .sidebar-toggler {
-//     color: $navbar-dark-color;
-//     border-color: $navbar-dark-toggler-border-color;
-//   }
-
-//   .sidebar-toggler-icon {
-//     background-image: escape-svg($navbar-dark-toggler-icon-bg);
-//   }
-
-//   .sidebar-text {
-//     color: $navbar-dark-color;
-//     a {
-//       color: $navbar-dark-active-color;
-
-//       @include hover-focus() {
-//         color: $navbar-dark-active-color;
-//       }
-//     }
-//   }
-// }
+      @include hover-focus() {
+        color: $navbar-dark-active-color;
+      }
+    }
+  }
+}

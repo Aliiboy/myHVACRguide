@@ -1,63 +1,13 @@
-// // Spacelab 4.5.0
-// // Bootswatch
+// myHVACRguide ======================================================================
+/* Color system
+-------------------------------------------------- */
+$white:                                 #fff !default;
+$black:                                 #000 !default;
+$navbar-dark-color:                     rgba($white, 1) !default;
+$navbar-light-color:                    rgba($black, .5) !default;
 
-// //
-// // Color system
-// //
 
-// $white:    #fff !default;
-// $gray-100: #f8f9fa !default;
-// $gray-200: #eee !default;
-// $gray-300: #dee2e6 !default;
-// $gray-400: #ced4da !default;
-// $gray-500: #999 !default;
-// $gray-600: #777 !default;
-// $gray-700: #495057 !default;
-// $gray-800: #333 !default;
-// $gray-900: #2d2d2d !default;
-// $black:    #000 !default;
-
-// $blue:    #446E9B !default;
-// $indigo:  #6610f2 !default;
-// $purple:  #6f42c1 !default;
-// $pink:    #e83e8c !default;
-// $red:     #CD0200 !default;
-// $orange:  #fd7e14 !default;
-// $yellow:  #D47500 !default;
-// $green:   #3CB521 !default;
-// $teal:    #20c997 !default;
-// $cyan:    #3399F3 !default;
-
-// $primary:       $blue !default;
-// $secondary:     $gray-500 !default;
-// $success:       $green !default;
-// $info:          $cyan !default;
-// $warning:       $yellow !default;
-// $danger:        $red !default;
-// $light:         $gray-200 !default;
-// $dark:          $gray-800 !default;
-
-// $yiq-contrasted-threshold: 200 !default;
-
-// // Body
-
-// $body-color:                $gray-600 !default;
-
-// // Links
-
-// $link-color:                $info !default;
-
-// // Fonts
-
-// $font-family-sans-serif:      "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
-
-// $headings-color:              $gray-900 !default;
-
-// // Navbar
-
-// $navbar-dark-color:                 rgba($white,.75) !default;
-// $navbar-dark-hover-color:           $white !default;
-
-// $navbar-light-color:                rgba($black,.4) !default;
-// $navbar-light-hover-color:          $info !default;
-// $navbar-light-active-color:         $info !default;
+/* Sidebar
+-------------------------------------------------- */
+$sidebar-dark-toggler-icon-bg:          url("data:image/svg+xml,<svg width='30' height='30' viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' fill='#{$navbar-dark-color}' d='M2 3.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm.646 2.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L4.293 8 2.646 6.354a.5.5 0 0 1 0-.708zM7 6.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z' clip-rule='evenodd'/></svg>") !default;
+$sidebar-light-toggler-icon-bg:         url("data:image/svg+xml,<svg width='30' height='30' viewBox='0 0 16 16' fill='%23333' xmlns='http://www.w3.org/2000/svg'><path fill-rule='evenodd' fill='#{$navbar-light-color}' d='M2 3.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm.646 2.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L4.293 8 2.646 6.354a.5.5 0 0 1 0-.708zM7 6.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 3a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z' clip-rule='evenodd'/></svg>") !default;

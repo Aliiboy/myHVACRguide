@@ -25,7 +25,7 @@ class ProfileUpdateView(LoginRequiredMixin, generic.FormView):
     """
 
     form_class = ProfileUpdateForm
-    template_name = 'app/customer/profile_update.html'
+    template_name = 'pages/customer/profile_update.html'
     success_url = reverse_lazy('customer:account_profile')
 
     def get_form_kwargs(self):

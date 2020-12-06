@@ -7,9 +7,9 @@
 {# CSS et SCSS #}
 {# ---------------------------------------------- #}
 {% block app_styles %}
-    {% compress css %}
-        <link type="text/x-scss" href="{% static "scss/core.scss" %}" rel="stylesheet" media="screen">
-    {% endcompress %}
+{% compress css %}
+<link type="text/x-scss" href="{% static "scss/core.scss" %}" rel="stylesheet" media="screen">
+{% endcompress %}
 {% endblock app_styles %}
 
 
@@ -17,39 +17,38 @@
 {# ---------------------------------------------- #}
 {% block app_layout %}
 
-    {# Header #}
-    <header>
-        {% include "becenter/snippets/header.html" %}
-    </header>
+{# Header #}
+<header>
+  {% include "components/navbar/ui_navbar.html" %}
+</header>
 
-    {# Main #}
-    <div class="container-fluid pt-3 app-wrapper">
-      <div class="row">
-  
-        {# Sidebar #}
-        <aside class="col-xl-2 col-lg-3 col-md-3 col-sm-4 d-md-block sidebar sidebar-light bg-light">
-          {% include "app/snippets/sidebar.html" %}
-        </aside>
-  
-        {# Block de la page #}
-        <main class="col-xl-10 col-lg-9 col-md-9 col-sm-12 ml-md-auto px-4 app-main-content">
-          <div class="container-fluid message-container pb-0">
-              {% include 'app/snippets/messages.html' %}
-          </div>
-          <div class="container-fluid pt-3">
-            {% block content %} {% endblock content %}
-            {# Footer #}
-            {% include "app/snippets/footer.html" %}
-          </div> <!-- container-fluid -->
-        </main>
-      </div>
-    </div>  
+{# Ui Wrapper #}
+<div class="container-fluid bg-light">
+  <div class="row">
+
+    {# Sidebar #}
+    <aside class="col-auto">
+      {% include "components/sidebar/ui_sidebar.html" %}
+    </aside>
+
+    {# Block de la page #}
+    <main class="col ml-md-auto">
+      {% include 'components/message/ui_messages.html' %}
+
+      <div class="container-fluid bg-white">
+        {% block content %} {% endblock content %}
+        {# Footer #}
+        {% include "components/footer/ui_footer.html" %}
+      </div> <!-- container-fluid -->
+    </main>
+  </div>
+</div>
 {% endblock app_layout %}
 
 
 {# Block des scripts JS application. #}
 {# ---------------------------------------------- #}
 {% block app_scripts %}
-    <script src="{% static "js/core/messages.js" %}"></script>
-    <script src="{% static "js/core/sidebar.js" %}"></script>
+<script src="{% static "js/core/messages.js" %}"></script>
+<script src="{% static "js/core/sidebar.js" %}"></script>
 {% endblock app_scripts %}
