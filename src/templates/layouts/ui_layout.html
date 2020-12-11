@@ -27,15 +27,15 @@
   <div class="row">
 
     {# Sidebar #}
-    <aside class="col-auto">
+    <aside class="col-auto pl-0">
       {% include "components/sidebar/ui_sidebar.html" %}
     </aside>
 
     {# Block de la page #}
-    <main class="col ml-md-auto">
+    <main class="col ml-md-auto mt-4">
       {% include 'components/message/ui_messages.html' %}
 
-      <div class="container-fluid bg-white">
+      <div class="container-fluid border rounded bg-white">
         {% block content %} {% endblock content %}
         {# Footer #}
         {% include "components/footer/ui_footer.html" %}
