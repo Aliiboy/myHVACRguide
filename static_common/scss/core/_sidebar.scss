@@ -4,55 +4,55 @@
 -------------------------------------------------- */
 .sidebar {
   position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 100; /* Behind the navbar */
-  padding: $navbar-account-height-y 0 0; /* Height of navbar */
+  // top: 0;
+  // bottom: 0;
+  // left: 0;
+  // z-index: 100; /* Behind the navbar */
+  // padding: $navbar-account-height-y 0 0; /* Height of navbar */
+  padding: $navbar-padding-y 0;
+  min-width: $sidebar-width-x;
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
   transition: all 0.3s;
-
-  // .container {
-  //   padding: 0;
+  // .dropdown-toggle::after {
+  //   display: block;
+  //   position: relative;
+  //   top: 50%;
+  //   right: 20px;
+  //   transform: translateY(-50%);
   // }
 
-  // .nav-link {
-  //   padding: 1rem;
-  // }
-
-  // &-nav .nav-item + .nav-item {
-  //   margin-left: 0;
-  // }
 }
 
+.sidebar-brand {
+  display: inline-block;
+  min-height: $navbar-account-height-y - $navbar-padding-y;
+  min-width: $sidebar-width-x - $navbar-padding-x;
+  padding: 0 1.5rem;
+  padding-top: $navbar-padding-y;
+  padding-bottom: $navbar-padding-y;
+  @include font-size($navbar-brand-font-size);
+  line-height: inherit;
+  white-space: nowrap;
 
-
-
-
-
-.sidebar-sticky {
-  position: relative;
-  top: 0;
-  height: calc(100vh - #{$navbar-account-height-y}); 
-  overflow-x: hidden;
-  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  @include hover-focus() {
+    text-decoration: none;
+  }
 }
 
 .sidebar-nav {
   display: flex;
   flex-direction: column; // cannot use `inherit` to get the `.navbar`s value
-  padding-left: 0;
+  padding: 0;
   margin-bottom: 0;
   list-style: none;
 
-  // .nav-link {
-  //   padding-right: 0;
-  //   padding-left: 0;
-  // }
-
-  .dropdown-menu {
-    position: static;
-    float: none;
+  .dropdown-items {
+    // position: static;
+    // float: none;
+    padding: 0;
+    overflow-y: hidden;
+    list-style: none;
+    transition: max-height .3s ease-in-out;
   }
 }
 
@@ -66,17 +66,21 @@
   background-size: 100% 100%;
 }
 
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - #{$navbar-account-height-y}); 
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
 @supports ((position: -webkit-sticky) or (position: sticky)) {
   .sidebar-sticky {
     position: -webkit-sticky;
     position: sticky;
   }
 }
-
-// .sidebar-heading {
-//     font-size: .75rem;
-//     text-transform: uppercase;
-// }
 
 /* Responsive
 -------------------------------------------------- */
@@ -111,82 +115,12 @@
 
 /* Themes
 -------------------------------------------------- */
-.sidebar-light {
-  .sidebar-brand {
-    color: $navbar-light-brand-color;
-    @include hover-focus() {
-      color: $navbar-light-brand-hover-color;
-    }
-  }
-
-  .sidebar-nav {
-    .nav-link {
-      color: $navbar-light-color;
-
-      @include hover-focus() {
-        color: $navbar-light-hover-color;
-      }
-
-      &.disabled {
-        color: $navbar-light-disabled-color;
-      }
-    }
-
-    .show > .nav-link,
-    .active > .nav-link,
-    .nav-link.show,
-    .nav-link.active {
-      color: $navbar-light-active-color;
-    }
-  }
-
-  .sidebar-toggler {
-    color: $navbar-light-color;
-    border-color: $navbar-light-toggler-border-color;
-  }
-
-  .sidebar-toggler-icon {
-    background-image: escape-svg($sidebar-light-toggler-icon-bg);
-  }
-
-  .sidebar-text {
-    color: $navbar-light-color;
-    a {
-      color: $navbar-light-active-color;
-
-      @include hover-focus() {
-        color: $navbar-light-active-color;
-      }
-    }
-  }
-}
 
 .sidebar-dark {
   .sidebar-brand {
     color: $navbar-dark-brand-color;
     @include hover-focus() {
       color: $navbar-dark-brand-hover-color;
-    }
-  }
-
-  .sidebar-nav {
-    .nav-link {
-      color: $navbar-dark-color;
-
-      @include hover-focus() {
-        color: $navbar-dark-hover-color;
-      }
-
-      &.disabled {
-        color: $navbar-dark-disabled-color;
-      }
-    }
-
-    .show > .nav-link,
-    .active > .nav-link,
-    .nav-link.show,
-    .nav-link.active {
-      color: $navbar-dark-active-color;
     }
   }
 

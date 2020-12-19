@@ -19,7 +19,6 @@
 
 {# Header #}
 <header>
-  {% include "components/navbar/ui_navbar.html" %}
 </header>
 
 {# Ui Wrapper #}
@@ -27,15 +26,15 @@
   <div class="row">
 
     {# Sidebar #}
-    <aside class="col-auto pl-0">
+    <aside class="col-auto p-0">
       {% include "components/sidebar/ui_sidebar.html" %}
     </aside>
 
     {# Block de la page #}
-    <main class="col ml-md-auto mt-4">
+    <main class="col ml-md-auto p-0">
+      {% include "components/navbar/ui_navbar.html" %}
       {% include 'components/message/ui_messages.html' %}
-
-      <div class="container-fluid border rounded bg-white">
+      <div class="container-fluid border rounded bg-white m-3">
         {% block content %} {% endblock content %}
         {# Footer #}
         {% include "components/footer/ui_footer.html" %}
